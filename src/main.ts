@@ -1,21 +1,19 @@
-require('./styles.scss');
+import './style.scss'
+import Flickity from 'flickity';
 
-var Flickity = require('flickity');
-require('flickity-imagesloaded');
-
-var $carousels = new Array();
+const $carousels = new Array();
 
 // Modals
 
-var rootEl = document.documentElement;
-var $modals = getAll('.modal');
-var $modalTriggers = getAll('.modal-trigger');
-var $modalCloses = getAll('.modal-card-head .delete, .modal-card-foot .button');
+const rootEl = document.documentElement;
+const $modals = getAll('.modal');
+const $modalTriggers = getAll('.modal-trigger');
+const $modalCloses = getAll('.modal-card-head .deconste, .modal-card-foot .button');
 
 if ($modalTriggers.length > 0) {
     $modalTriggers.forEach(function ($el) {
         $el.addEventListener('click', function () {
-            var target = $el.dataset.target;
+            const target = $el.dataset.target;
             openModal(target);
         });
     });
@@ -29,11 +27,11 @@ if ($modalCloses.length > 0) {
     });
 }
 
-function openModal(target) {
-    var $target = document.getElementById(target);
+function openModal(target: string) {
+    const $target = document.getElementById(target);
     rootEl.classList.add('is-clipped');
-    $target.classList.add('is-active');
-    var carouselId = target + '-carousel';
+    $target?.classList.add('is-active');
+    const carouselId = target + '-carousel';
 
     if (document.querySelector('#' + carouselId)) {
         // Initialize each carousel one time only
@@ -41,7 +39,7 @@ function openModal(target) {
             $carousels.push(initCarousel(carouselId));
         }
         else {
-            var index = $carousels.findIndex(c => c.element.id == carouselId);
+            const index = $carousels.findIndex(c => c.element.id == carouselId);
             if (index === -1) {
                 $carousels.push(initCarousel(carouselId));
             }
@@ -58,13 +56,13 @@ function closeModals() {
 
 // Functions
 
-function initCarousel(id) {
+function initCarousel(id: string) {
     return new Flickity('#' + id, {
         imagesLoaded: true,
         adaptiveHeight: true // https://github.com/metafizzy/flickity/issues/11
     });
 }
 
-function getAll(selector) {
+function getAll(selector: any) {
     return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
 }
