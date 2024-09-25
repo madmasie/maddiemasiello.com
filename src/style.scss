@@ -32,7 +32,47 @@ a.icon > strong {margin-left:.25rem}
 
 // override specific bulma styles
 .section {padding: 2.15rem 1.5rem}
+.subtitle {
+    margin-top: 10px; // Adjust spacing between image and text
+    //text-align: center;
+  }
 
+  /* Centering and spacing for the video */
+.video {
+    margin-top: 20px;
+  }
+
+  /* Add space between images and text */
+.card-content .columns .column {
+    margin-bottom: 2rem;
+  }
+
+  /* Adjust font sizes for subtitles */
+.subtitle {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+
+  /* Ensure images are consistently sized */
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Add some padding to the card */
+.card {
+    padding: 20px;
+  }
+
+
+  /* Style the project section */
+.section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+  }
+  
 @function theme-color($key: "primary") {
     @return map-get($theme-colors, $key);
 }
