@@ -18,8 +18,7 @@ export default function Hero() {
         backgroundRepeat: "no-repeat",
         backgroundBlendMode: "darken",
         backgroundColor: "#0005",
-        backgroundImage:
-          "url(https://www.lawsonphotography.me/wp-content/uploads/2022/10/IMG_6305.jpg)",
+        backgroundImage: "url(/img/background.jpg)",
       }}
     >
       <Stack

@@ -43,12 +43,6 @@ const entries: ExperienceEntry[] = [
     ],
     tags: ["pcb design", "pcb validation", "analysis", "jira"],
   },
-  {
-    entity: "Wendy's",
-    title: "Crew Member",
-    location: "Littleton, CO",
-    date: "June 2022 - September 2022",
-  },
 ];
 
 export default function Work() {
