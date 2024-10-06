@@ -23,13 +23,9 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build:worker
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 153255d3475d0254baf21408b8a2bd7c
-          projectName: maddiemasiello-com
-          directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
