@@ -17,12 +17,17 @@ const entries: ExperienceEntry[] = [
       "Probability & Random Processes",
       "Electromagnetic Fields & Transmission",
       "Physics I-III",
+      "Modern Physics",
       "Data Structures",
       "Object Oriented Programming",
       "Digital Design and Assembly Programming",
       "Semiconductor Device Electronics",
       "Microprocessor System Design",
-      "Modern Physics",
+      "Computer Hardware Architecture & Design",
+      "Classical Control Systems",
+      "Analog Electronics & Integrated Circuits",
+      "Digital Signal Processing",
+      "Microcontroller-Based Systems Design"
     ],
   },
 ];
