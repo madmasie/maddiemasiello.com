@@ -1,7 +1,7 @@
-import * as React from "react";
-import DialogTitle from "@mui/material/DialogTitle";
-import Dialog from "@mui/material/Dialog";
-import { ProjectEntry } from "./ProjectInfo";
+import * as React from 'react';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
+import { ProjectEntry } from './ProjectInfo';
 import {
   Box,
   DialogContent,
@@ -10,11 +10,11 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
-import Carousel from "../Carousel/Carousel";
-import YouTube from "react-youtube";
-import { IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+} from '@mui/material';
+import Carousel from '../Carousel/Carousel';
+import YouTube from 'react-youtube';
+import { IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 interface ProjectDialogProps {
   entry: ProjectEntry;
@@ -28,7 +28,7 @@ export default function ProjectDialog({
   setOpen,
 }: ProjectDialogProps) {
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const assetsExist = entry.details.assets && entry.details.assets.length > 0;
 
@@ -42,9 +42,9 @@ export default function ProjectDialog({
     >
       <DialogTitle
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
         {entry.title}
@@ -55,10 +55,10 @@ export default function ProjectDialog({
       <DialogContent
         dividers
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          alignContent: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          alignContent: 'center',
         }}
       >
         {entry.details.carouselImages &&
@@ -71,7 +71,7 @@ export default function ProjectDialog({
                     src={img.imageUrl}
                     height={300}
                     style={{
-                      objectFit: "contain",
+                      objectFit: 'contain',
                     }}
                   />
                   <Typography

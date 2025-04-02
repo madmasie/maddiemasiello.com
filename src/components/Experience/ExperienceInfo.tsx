@@ -1,8 +1,8 @@
-import Grid from "@mui/material/Grid2";
-import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import { Card, CardContent, CardHeader, Chip } from "@mui/material";
-import { Box } from "@mui/material";
+import Grid from '@mui/material/Grid2';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import { Card, CardContent, CardHeader, Chip } from '@mui/material';
+import { Box } from '@mui/material';
 
 export interface ExperienceEntry {
   entity: string;
@@ -59,8 +59,8 @@ export default function ExperienceInfo({ entries }: ExperienceInfoProps) {
               {entry.tags && entry.tags.length > 0 && (
                 <Box
                   sx={{
-                    display: "flex",
-                    flexWrap: "wrap", // Allows chips to wrap to the next row
+                    display: 'flex',
+                    flexWrap: 'wrap', // Allows chips to wrap to the next row
                     gap: 1, // Adds some space between the chips
                   }}
                 >

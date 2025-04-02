@@ -1,4 +1,4 @@
-import { Container, Divider, Typography } from "@mui/material";
+import { Container, Divider, Typography } from '@mui/material';
 
 export default function AboutMe() {
   return (

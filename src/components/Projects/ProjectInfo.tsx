@@ -1,6 +1,6 @@
-"use client";
-import Grid, { GridSize } from "@mui/material/Grid2";
-import Typography from "@mui/material/Typography";
+'use client';
+import Grid, { GridSize } from '@mui/material/Grid2';
+import Typography from '@mui/material/Typography';
 import {
   Breakpoint,
   Button,
@@ -8,9 +8,9 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-} from "@mui/material";
-import ProjectDialog from "./ProjectDialog";
-import { useState } from "react";
+} from '@mui/material';
+import ProjectDialog from './ProjectDialog';
+import { ReactNode, useState } from 'react';
 
 interface CarouselImage {
   imageUrl: string;
@@ -32,7 +32,7 @@ interface ProjectDetails {
 export interface ProjectEntry {
   image: string;
   title: string;
-  description: string;
+  description: ReactNode;
   details: ProjectDetails;
 }
 
@@ -41,7 +41,7 @@ interface ProjectInfoProps {
 }
 
 function trimString(str: string, maxLen: number) {
-  return str.length > maxLen - 3 ? str.slice(0, maxLen).trim() + "..." : str;
+  return str.length > maxLen - 3 ? str.slice(0, maxLen).trim() + '...' : str;
 }
 
 type ResponsiveStyleValue<T> =
@@ -57,14 +57,14 @@ export default function ProjectInfo({ entries }: ProjectInfoProps) {
   const sizes: ResponsiveStyleValue<GridSize> = {
     xs: 12,
   };
-  if (entries.length > 1) sizes["md"] = 6;
-  if (entries.length > 2) sizes["xl"] = 4;
+  if (entries.length > 1) sizes['md'] = 6;
+  if (entries.length > 2) sizes['xl'] = 4;
 
   return (
     <Grid container spacing={2} columns={12}>
       {entries.map((entry) => (
         <Grid key={entry.title} size={sizes}>
-          <Card variant="outlined" sx={{ height: "100%" }}>
+          <Card variant="outlined" sx={{ height: '100%' }}>
             <CardMedia
               component="img"
               alt={`Image for ${entry.title}`}
@@ -75,14 +75,19 @@ export default function ProjectInfo({ entries }: ProjectInfoProps) {
               <Typography gutterBottom variant="h6" component="div">
                 {entry.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
-                {trimString(entry.description, 100)}
+              <Typography
+                variant="body2"
+                component="span"
+                color="text.secondary"
+                gutterBottom
+              >
+                {entry.description}
               </Typography>
             </CardContent>
             <CardActions>
               <Button
                 size="small"
-                sx={{ marginLeft: "auto" }}
+                sx={{ marginLeft: 'auto' }}
                 onClick={() => setOpen(entry.title)}
               >
                 Learn More

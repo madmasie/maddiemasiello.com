@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from "react";
-import Box from "@mui/material/Box";
-import { IconButton } from "@mui/material";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import Slide from "@mui/material/Slide";
-import Stack from "@mui/material/Stack";
+import React, { useCallback, useState } from 'react';
+import Box from '@mui/material/Box';
+import { IconButton } from '@mui/material';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import Slide from '@mui/material/Slide';
+import Stack from '@mui/material/Stack';
 
 interface CarouselProps {
   elements: React.ReactElement[];
@@ -15,36 +15,36 @@ export default function Carousel({ elements }: CarouselProps) {
   const [currentPage, setCurrentPage] = useState(0);
   // slideDirection is the direction that the elements will slide in
   const [slideDirection, setSlideDirection] = useState<
-    "right" | "left" | undefined
-  >("left");
+    'right' | 'left' | undefined
+  >('left');
 
   // these two functions handle changing the pages
   const handleNextPage = useCallback(() => {
-    setSlideDirection("left");
+    setSlideDirection('left');
     setCurrentPage((prevPage) =>
-      prevPage !== elements.length - 1 ? prevPage + 1 : prevPage
+      prevPage !== elements.length - 1 ? prevPage + 1 : prevPage,
     );
   }, [elements.length]);
 
   const handlePrevPage = useCallback(() => {
-    setSlideDirection("right");
+    setSlideDirection('right');
     setCurrentPage((prevPage) => (prevPage !== 0 ? prevPage - 1 : prevPage));
   }, []);
 
   //   register the event listeners for the arrow keys
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowRight") {
+      if (event.key === 'ArrowRight') {
         handleNextPage();
-      } else if (event.key === "ArrowLeft") {
+      } else if (event.key === 'ArrowLeft') {
         handlePrevPage();
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleNextPage, handlePrevPage]);
 
@@ -52,10 +52,10 @@ export default function Carousel({ elements }: CarouselProps) {
     <Stack
       direction="row"
       sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
       }}
     >
       {elements.length > 1 && (
@@ -73,7 +73,7 @@ export default function Carousel({ elements }: CarouselProps) {
           <Box
             key={`element-${index}`}
             sx={{
-              display: currentPage === index ? "block" : "none",
+              display: currentPage === index ? 'block' : 'none',
             }}
           >
             <Slide direction={slideDirection} in={currentPage === index}>
