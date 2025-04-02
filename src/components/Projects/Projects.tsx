@@ -44,20 +44,19 @@ const projects: ProjectEntry[] = [
        My group and I designed a custom interface for our designed circuits. Throughout the quarter, 
        we analyzed, designed, and constructed digital logic gates from, focusing on  Positive Emitter-Coupled 
        Logic (PECL), Transistor-Transistor Logic (TTL), and Complementary Metal-Oxide-Semiconductor (CMOS) technologies.
-       The project involved building a PECL OR-NOR gate, interfacing TTL to PECL, and further integrating the PECL with the CMOS.'
-      <ol type="a">
-          <li>
-          
-            </li>
-        </ol>
+       The project involved building a PECL OR-NOR gate, interfacing TTL to PECL, and further integrating the PECL with the CMOS.' 
       </>
     ),
 
       details: {
         carouselImages: [
           { 
+            imageUrl: '/img/ee307schem.png',
+            caption: 'Full interfacing circuit layout with custom interfacing schematic',
+          },
+          { 
             imageUrl: '/img/ee307schematic.png',
-            caption: 'Final Digital Logic Interfacing Project Schematic with custom interfacing',
+            caption: 'Final digital logic interfacing project schematic with custom interfacing',
           },
         ],
       },
