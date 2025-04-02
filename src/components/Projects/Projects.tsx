@@ -41,7 +41,7 @@ const projects: ProjectEntry[] = [
     description: (
       <>
       This project was created in EE 307 / EE 347 Lab (Semiconductor Device Electronics) at Cal Poly.
-       My group and I designed a custom interface from TTL to CMOS logic families. Throughout the quarter, 
+       My group and I designed a custom interface for our designed circuits. Throughout the quarter, 
        we analyzed, designed, and constructed digital logic gates from, focusing on  Positive Emitter-Coupled 
        Logic (PECL), Transistor-Transistor Logic (TTL), and Complementary Metal-Oxide-Semiconductor (CMOS) technologies.
        The project involved building a PECL OR-NOR gate, interfacing TTL to PECL, and further integrating the PECL with the CMOS.'
