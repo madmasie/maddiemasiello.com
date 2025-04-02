@@ -7,7 +7,7 @@ import Slide from '@mui/material/Slide';
 import Stack from '@mui/material/Stack';
 
 interface CarouselProps {
-  elements: React.ReactElement[];
+  elements: React.ReactNode[];
 }
 
 export default function Carousel({ elements }: CarouselProps) {

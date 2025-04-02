@@ -1,5 +1,5 @@
 'use client';
-import Grid, { GridSize } from '@mui/material/Grid2';
+import Grid, { GridSize } from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import {
   Breakpoint,
@@ -18,7 +18,7 @@ interface CarouselImage {
 }
 
 interface Asset {
-  icon: React.ReactElement;
+  icon: React.ReactNode;
   title: string;
   url: string;
 }
