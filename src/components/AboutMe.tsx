@@ -8,7 +8,10 @@ export default function AboutMe() {
       </Typography>
       <Divider sx={{ mb: 2 }} />
       <Typography>
-        Motivated EE student with extensive hands-on experience in PCB design,
+        Hello! My name is Maddie Masiello, and I'm a 4th year electrical engineering 
+        student at Cal Poly SLO, originally from Littleton, Colorado.
+
+        I have extensive hands-on experience in PCB design,
         circuit analysis, and hardware debugging, specializing in Altium,
         circuit design, and system integration. Proven track record of designing
         complex electrical systems, optimizing production processes, and
@@ -17,6 +20,8 @@ export default function AboutMe() {
         solutions for real-world challenges. Strong foundation in circuit
         theory, power systems, and micro-controller programming, ready to
         contribute effectively to advanced engineering projects.
+
+        Outside of my studies, I enjoy skiing, playing ice hockey, biking, and playing viola and piano.
       </Typography>
     </Container>
   );

@@ -36,6 +36,34 @@ const projects: ProjectEntry[] = [
   },
 
   {
+    image: '/img/ee307.png',
+    title: 'Digital Logic Interfacing Project',
+    description: (
+      <>
+      This project was created in EE 307 / EE 347 Lab (Semiconductor Device Electronics) at Cal Poly.
+       My group and I designed a custom interface from TTL to CMOS logic families. Throughout the quarter, 
+       we analyzed, designed, and constructed digital logic gates from, focusing on  Positive Emitter-Coupled 
+       Logic (PECL), Transistor-Transistor Logic (TTL), and Complementary Metal-Oxide-Semiconductor (CMOS) technologies.
+       The project involved building a PECL OR-NOR gate, interfacing TTL to PECL, and further integrating the PECL with the CMOS.'
+      <ol type="a">
+          <li>
+          
+            </li>
+        </ol>
+      </>
+    ),
+
+      details: {
+        carouselImages: [
+          { 
+            imageUrl: '/img/ee307schematic.png',
+            caption: 'Final Digital Logic Interfacing Project Schematic with custom interfacing',
+          },
+        ],
+      },
+  },
+
+  {
     image: '/img/pendubot.png',
     title: 'Pendubot PID Controller Design',
     description: (
@@ -87,6 +115,7 @@ const projects: ProjectEntry[] = [
           caption: 'Pendubot MATLAB Simulink Design',
         },
       ],
+      ytVideoId: 'sQcK0NVclIU',
     },
   },
 
