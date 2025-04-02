@@ -71,7 +71,7 @@ const projects: ProjectEntry[] = [
           <li>
             used two different tuning methods, Manuel and Ziegler-Nichols, to
             adjust the PID gains (Kp, Ki, and Kd) through simulations and
-            hardware experiments, and
+            hardware experiments
           </li>
           <li>
             utilized frequency response design methods to look at gain and phase
