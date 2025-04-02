@@ -8,7 +8,7 @@ export default function AboutMe() {
       </Typography>
       <Divider sx={{ mb: 2 }} />
       <Typography>
-        Hello! My name is Maddie Masiello, and I'm a 4th year electrical engineering 
+        Hello! My name is Maddie Masiello, and I am a 4th year electrical engineering 
         student at Cal Poly SLO, originally from Littleton, Colorado.
 
         I have extensive hands-on experience in PCB design,
