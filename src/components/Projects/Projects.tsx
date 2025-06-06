@@ -5,6 +5,48 @@ import ProjectInfo, { ProjectEntry } from './ProjectInfo';
 import { PictureAsPdf } from '@mui/icons-material';
 
 const projects: ProjectEntry[] = [
+
+   {
+    image: '/img/329cpboard.jpg',
+    title: 'EE 329 DSP Guitar Delay Pedal',
+    description:
+      'The “Repeat-inator” is a custom-designed guitar effects pedal that applies a digital delay to an incoming audio signal. When a guitar is plugged into the input, the analog signal is converted into digital form by the STM32’s built-in ADC, stored temporarily using a circular buffer, and then played back after a delay period via an external DAC. This creates an echo-like repetition of the original sound. Users can adjust the delay time, the amount of feedback (how many times the sound repeats), and the dry/wet mix (balance between original and delayed signals) using potentiometers. These parameters are read in real-time and affect the behavior of the audio output dynamically. The system also features a true bypass button that lets users completely skip the delay effect, passing the guitar signal directly from input to output. The device is optimized for low latency and high-fidelity audio performance, tailored specifically for live or studio guitar use.',
+
+    details: {
+      carouselImages: [
+        {
+          imageUrl: '/img/329schematic.png',
+          caption: 'Final DSP Guitar Delay Pedal Schematic',
+        },
+        
+        {
+          imageUrl: '/img/ee329inout.png',
+          caption:
+            'Steady State Input vs Output of Delay Effect with 1500hz Sin Wave Input (orange) and DAC Output (green)',
+        },
+        
+        
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'EE 329 Capstone Project Report',
+          url: '/docs/riscv-mcu.pdf',
+        },
+
+        {
+          icon: <PictureAsPdf />,
+          title: 'EE 329 Capstone Project Presentation Slides',
+          url: '/docs/EE329 Repeat-inator Presentation.pdf',
+        },
+
+      ],
+
+      ytVideoId: 'BtPoyJl9gnM',
+    },
+  },
+
+
   {
     image: '/img/rgm-pic.png',
     title: 'Circuits Lab Rube Goldberg Machine',
