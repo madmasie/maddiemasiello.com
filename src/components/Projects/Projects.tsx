@@ -123,9 +123,6 @@ const projects: ProjectEntry[] = [
           imageUrl: '/img/329a3wire.png',
           caption: 'MCU / keypad / LED wiring diagram ',
         },
-        
-        
-        
       ],
       assets: [
         {
@@ -133,15 +130,47 @@ const projects: ProjectEntry[] = [
           title: 'Countdown Timer Project Report',
           url: '/docs/329a3doc.pdf',
         }
-
-      
-
       ],
 
       ytVideoId: 'qgfxiS40R3U',
     },
   },
 
+  {
+    image: '/img/329a4.png',
+    title: 'Digital Reaction Timer Game - STM32L4A6ZG Nucleo Board',
+    description:
+      'This project features a reaction timer game built on the STM32L4 microcontroller. The system uses a 16x2 LCD and onboard button/LED to measure user reaction time with 1ms accuracy. After the user initiates the game, a randomized delay triggers an LED signal, prompting the user to respond as quickly as possible. The LCD displays the reaction time, and the system automatically resets for the next round. The project features an interrupt-driven state machine, hardware RNG, and clean modular design for responsive and accurate timing. Project source code and design details can be found in the "Countdown Timer Project Report" above.',
+    details: {
+      carouselImages: [
+
+        
+        {
+          imageUrl: '/img/329a4schem.png',
+          caption: 'Reaction Timer Wiring Diagram', 
+        },
+        {
+          imageUrl: '/img/329a4timing.png',
+          caption: 'Theoretical 5kHz with 25% Duty Cycle Square Wave', 
+        },
+        
+        {
+          imageUrl: '/img/329a4clk.png',
+          caption: 'ISR Execution  timing with MC0 Clock. Oscilloscope capture of PC0 (5 kHz output waveform) and PC1 (ISR timing pulse). PC1 briefly pulses high during each TIM2 interrupt (CCR1 compare match and ARR overflow), indicating ISR execution timing relative to the 5 kHz signal. ', 
+        },
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'Countdown Timer Project Report',
+          url: '/docs/329a3doc.pdf',
+        }
+      ],
+
+      ytVideoId: 'AYW05r9xL4c',
+    },
+  },
+  
   {
     image: '/img/rgm-pic.png',
     title: 'Circuits Lab Rube Goldberg Machine',
@@ -171,6 +200,8 @@ const projects: ProjectEntry[] = [
       ytVideoId: 'BtPoyJl9gnM',
     },
   },
+
+  
 
   {
     image: '/img/ee307.png',
