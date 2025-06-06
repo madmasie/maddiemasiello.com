@@ -9,7 +9,7 @@ const entries: ExperienceEntry[] = [
     title: 'Electrical Engineering, B.S.',
     date: 'September 2021 - Present',
     description:
-      'I am currently pursuing a Bachelor of Science degree in Electrical Engineering at Cal Poly. Some of my relevant coursework includes:',
+      'I am currently pursuing a Bachelor of Science degree in Electrical Engineering at Cal Poly, with a minor in computer science. Some of my relevant coursework includes:',
     bullets: [
       'Electric Circuits I-III',
       'Energy Conversion Electromagnetics',
@@ -28,6 +28,9 @@ const entries: ExperienceEntry[] = [
       'Analog Electronics & Integrated Circuits',
       'Digital Signal Processing',
       'Microcontroller-Based Systems Design',
+      'Vision-Based Robotic Manipulation and Lab',
+      'Power Electronics & Lab'
+      
     ],
   },
 ];
