@@ -196,8 +196,8 @@ const projects: ProjectEntry[] = [
       assets: [
         {
           icon: <PictureAsPdf />,
-          title: 'Countdown Timer Project Report',
-          url: '/docs/329a3doc.pdf',
+          title: 'DAC Project Report',
+          url: '/docs/329a5pdf.pdf',
         }
       ],
 
