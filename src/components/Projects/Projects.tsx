@@ -227,6 +227,7 @@ const projects: ProjectEntry[] = [
             caption: 'Final digital logic interfacing project schematic with custom interfacing',
           },
         ],
+        ytVideoId: 'sQcK0NVclIU',
       },
   },
 
@@ -282,7 +283,7 @@ const projects: ProjectEntry[] = [
           caption: 'Pendubot MATLAB Simulink Design',
         },
       ],
-      ytVideoId: 'sQcK0NVclIU',
+      
     },
   },
 
