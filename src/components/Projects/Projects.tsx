@@ -170,6 +170,40 @@ const projects: ProjectEntry[] = [
       ytVideoId: 'AYW05r9xL4c',
     },
   },
+  {
+    image: '/img/329a5cover.png',
+    title: 'Digital-to-analog converter (DAC) using the SPI (STM32L4 MCU & MCP4821 DAC)',
+    description:
+      'This project demonstrates the integration of an STM32L4 microcontroller with an MCP4821 digital-to-analog converter (DAC) using the SPI communication protocol. A 4x3 matrix keypad is used as user input to enter a 3-digit voltage value, which is then converted into a 12-bit DAC word and transmitted to the MCP4821. The system enables real-time voltage output from 0.00 V to 3.30 V, with input validation, output capping, and reset functionality. The implementation was verified using a logic analyzer and calibrated to meet specified accuracy requirements.',
+    details: {
+      carouselImages: [
+
+        
+        {
+          imageUrl: '/img/329a5wire.png',
+          caption: 'Reaction Timer Wiring Diagram', 
+        },
+        {
+          imageUrl: '/img/329a5cover.png',
+          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
+        },
+        {
+          imageUrl: '/img/329a5cover2.png',
+          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
+        }
+        
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'Countdown Timer Project Report',
+          url: '/docs/329a3doc.pdf',
+        }
+      ],
+
+      ytVideoId: 'RLMiT1T3Tg0',
+    },
+  },
   
   {
     image: '/img/rgm-pic.png',
