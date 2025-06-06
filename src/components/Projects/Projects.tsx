@@ -47,7 +47,7 @@ const projects: ProjectEntry[] = [
   },
 
   {
-    image: '/img/329cpboard.jpg',
+    image: '/img/329a1cover.jpg',
     title: 'EE 329 Binary LED Counter and Instruction Timer using STM32L4A6ZG Nucleo Board',
     description:
       'This project implements a 4-bit binary LED counter and an instruction execution timing measurement system using the STM32L4A6ZG microcontroller. The LED counter counts from 0 to 15 with a visible delay, and the oscilloscope was used to calibrate and measure the delay loop. Execution timing was measured for a range of data types and arithmetic operations, and results are summarized. All Source code and data can be found in the project document ',
