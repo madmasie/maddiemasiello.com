@@ -8,24 +8,20 @@ const projects: ProjectEntry[] = [
 
    {
     image: '/img/329cpboard.jpg',
-    title: 'EE 329 DSP Guitar Delay Pedal',
+    title: 'DSP Guitar Delay Pedal - "Repeat-inator"',
     description:
       'The “Repeat-inator” is a custom-designed guitar effects pedal that applies a digital delay to an incoming audio signal. When a guitar is plugged into the input, the analog signal is converted into digital form by the STM32’s built-in ADC, stored temporarily using a circular buffer, and then played back after a delay period via an external DAC. This creates an echo-like repetition of the original sound. Users can adjust the delay time, the amount of feedback (how many times the sound repeats), and the dry/wet mix (balance between original and delayed signals) using potentiometers. These parameters are read in real-time and affect the behavior of the audio output dynamically. The system also features a true bypass button that lets users completely skip the delay effect, passing the guitar signal directly from input to output. The device is optimized for low latency and high-fidelity audio performance, tailored specifically for live or studio guitar use.',
-
     details: {
       carouselImages: [
         {
           imageUrl: '/img/329schematic.png',
           caption: 'Final DSP Guitar Delay Pedal Schematic',
         },
-        
         {
           imageUrl: '/img/ee329inout.png',
           caption:
             'Steady State Input vs Output of Delay Effect with 1500hz Sin Wave Input (orange) and DAC Output (green)',
         },
-        
-        
       ],
       assets: [
         {
@@ -33,22 +29,19 @@ const projects: ProjectEntry[] = [
           title: 'EE 329 Capstone Project Report',
           url: '/docs/riscv-mcu.pdf',
         },
-
         {
           icon: <PictureAsPdf />,
           title: 'EE 329 Capstone Project Presentation Slides',
           url: '/docs/329presentation.pdf',
         },
-
       ],
-
       ytVideoId: 'Eqc3riIkbCI',
     },
   },
 
   {
-    image: '/img/329a1cover.jpg',
-    title: 'EE 329 Binary LED Counter and Instruction Timer using STM32L4A6ZG Nucleo Board',
+    image: '/img/329a1cover.png',
+    title: 'Binary LED Counter and Instruction Timer using STM32L4A6ZG Nucleo Board',
     description:
       'This project implements a 4-bit binary LED counter and an instruction execution timing measurement system using the STM32L4A6ZG microcontroller. The LED counter counts from 0 to 15 with a visible delay, and the oscilloscope was used to calibrate and measure the delay loop. Execution timing was measured for a range of data types and arithmetic operations, and results are summarized. All Source code and data can be found in the project document ',
     details: {
@@ -57,14 +50,11 @@ const projects: ProjectEntry[] = [
           imageUrl: '/img/ee329a1.png',
           caption: 'STM32L4A6ZG Nucleo Board Wiring Diagram',
         },
-        
         {
           imageUrl: '/img/ee329a1timing.png',
           caption:
             'Execution Timing Measurement Results for Various Data Types and Operations',
         },
-        
-        
       ],
       assets: [
         {
@@ -72,18 +62,14 @@ const projects: ProjectEntry[] = [
           title: 'EE 329 Binary LED Counter and Instruction Timer Report',
           url: '/docs/ee329a1.pdf',
         }
-
-      
-
       ],
-
       ytVideoId: 'mrWB2fJikeg',
     },
   },
 
   {
-    image: '/img/329a1cover.jpg',
-    title: 'EE 329 Keypad Interface - STM32L4A6ZG Nucleo Board',
+    image: '/img/329a2cover.png',
+    title: 'Keypad Interface - STM32L4A6ZG Nucleo Board',
     description:
       'This design project implemented a keypad interface using the STM32L4 microcontroller. A 3x4 matrix keypad was connected to GPIO pins, and software was developed to detect and identify keypresses through polling. The keypad module was designed to include proper configuration, keypress detection, and software debounce functionality. Upon detecting a valid keypress, a corresponding 4-bit binary value was displayed using four LEDs ',
     details: {
@@ -109,7 +95,7 @@ const projects: ProjectEntry[] = [
       assets: [
         {
           icon: <PictureAsPdf />,
-          title: 'Project Demonstration Video',
+          title: 'Keypad interface project report',
           url: '/docs/ee329a1.pdf',
         }
 
@@ -120,7 +106,41 @@ const projects: ProjectEntry[] = [
       ytVideoId: 'KWUofW2I2hs',
     },
   },
+  {
+    image: '/img/329a3cover.png',
+    title: 'Digital Countdown Timer Game - STM32L4A6ZG Nucleo Board',
+    description:
+      'This project implements a digital countdown timer using an STM32 microcontroller, a keypad for time input, an LCD for display, and LEDs for visual feedback. Users input the countdown time in MM:SS format using the keypad, with digits entered from right to left. Once the timer starts, the LED flashes once per second during the countdown, and performs a "dance" sequence when the timer reaches zero. The system features multiple functional states, including a greeting screen, time input mode, active countdown, and completion state. Although the behavior of the star/reset button can vary depending on how quickly it is pressed, the system performs reliably. Additional attention was given to minimizing delay functions to improve response time, and throughout development, the importance of precise timing - especially when working with the LCD - was a key takeaway. Design details can be found in "Countdown Timer Project Report" above.',
+    details: {
+      carouselImages: [
 
+        {
+          imageUrl: '/img/329a3flow.png',
+          caption:
+            'Pseudo Code Flowchart',
+        },
+        {
+          imageUrl: '/img/329a3wire.png',
+          caption: 'MCU / keypad / LED wiring diagram ',
+        },
+        
+        
+        
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'Countdown Timer Project Report',
+          url: '/docs/329a3doc.pdf',
+        }
+
+      
+
+      ],
+
+      ytVideoId: 'qgfxiS40R3U',
+    },
+  },
 
   {
     image: '/img/rgm-pic.png',
