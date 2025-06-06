@@ -37,7 +37,7 @@ const projects: ProjectEntry[] = [
         {
           icon: <PictureAsPdf />,
           title: 'EE 329 Capstone Project Presentation Slides',
-          url: '/docs/EE329 Repeat-inator Presentation.pdf',
+          url: '/docs/329presentation.pdf',
         },
 
       ],
