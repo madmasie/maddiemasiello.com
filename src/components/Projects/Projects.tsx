@@ -42,7 +42,7 @@ const projects: ProjectEntry[] = [
 
       ],
 
-      ytVideoId: 'BtPoyJl9gnM',
+      ytVideoId: 'Eqc3riIkbCI',
     },
   },
 
