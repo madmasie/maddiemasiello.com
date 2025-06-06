@@ -82,6 +82,47 @@ const projects: ProjectEntry[] = [
   },
 
   {
+    image: '/img/329a1cover.jpg',
+    title: 'EE 329 Keypad Interface - STM32L4A6ZG Nucleo Board',
+    description:
+      'This design project implemented a keypad interface using the STM32L4 microcontroller. A 3x4 matrix keypad was connected to GPIO pins, and software was developed to detect and identify keypresses through polling. The keypad module was designed to include proper configuration, keypress detection, and software debounce functionality. Upon detecting a valid keypress, a corresponding 4-bit binary value was displayed using four LEDs ',
+    details: {
+      carouselImages: [
+        {
+          imageUrl: '/img/ee329a2schem.png',
+          caption: 'STM32L4A6ZG Nucleo Board & Keypad Wiring Diagram',
+        },
+        
+        {
+          imageUrl: '/img/329a2main.png',
+          caption:
+            'Pseudo Code main operations for Keypad Interface',
+        },
+        
+        {
+          imageUrl: '/img/329a2debounce.png',
+          caption:
+            'Pseudo Code Debouunce operations for Keypad Interface',
+        },
+        
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'Project Demonstration Video',
+          url: '/docs/ee329a1.pdf',
+        }
+
+      
+
+      ],
+
+      ytVideoId: 'KWUofW2I2hs',
+    },
+  },
+
+
+  {
     image: '/img/rgm-pic.png',
     title: 'Circuits Lab Rube Goldberg Machine',
     description:
