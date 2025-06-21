@@ -172,10 +172,10 @@ const projects: ProjectEntry[] = [
   },
 
     {
-    image: '/img/333FEDE2.png',
+    image: '/img/pipeline.png',
     title: ' Pipelined RISC-V CPU - Data Forwarding, Hazard Detection, and Control Handling',
     description:
-      'This project implements a 5-stage pipelined OTTER RISC-V CPU with dynamic hazard handling, including full support for data forwarding, stall logic for load-use hazards, and flushing on control mispredictions. We began by implementing two hazard multiplexers (HazardMuxA and HazardMuxB) in the execute stage, enabling operand forwarding to avoid incorrect computation due to RAW (Read After Write) hazards. The hazard unit detects when forwarding is needed by comparing source and destination registers across pipeline stages and checking the write-enable signal. It selects the correct forwarded data from either the MEM or WB stage when needed. If no hazard is detected, values pass through normally. The load-use hazard is separately detected when a load instruction is followed by a dependent instruction; in this case, the pipeline stalls the PC and decode stage and flushes the execute stage. For control hazards, we implemented a static branch-not-taken predictor. However, the predictor initially failed due to incorrect PC selection logic being placed in the decode stage instead of the execute stage where the branch condition is actually resolved. After correcting this, we added logic to compute actual_pc_selE in the execute stage based on whether the instruction is a branch, JAL, or JALR and if the branch was taken. Flush logic ensures misfetched instructions are removed from the pipeline and replaced with the correct ones. We verified our implementation with waveform analysis, which confirmed that: Forwarding paths correctly deliver the necessary data in the EX stage, Load-use hazards insert the correct number of stalls, Control mispredictions trigger appropriate flushes and PC redirection. Lastly, we compared the performance of our pipelined design to our earlier multi-cycle implementation. The pipelined CPU completed a 50x50 matrix multiplication benchmark over one million times faster and consumed a total of 93 mW on-chip power, while maintaining similar resource utilization.',
+      'This project was implemented in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly, and is a 5-stage pipelined OTTER RISC-V CPU with dynamic hazard handling, including full support for data forwarding, stall logic for load-use hazards, and flushing on control mispredictions.Our group began by implementing two hazard multiplexers (HazardMuxA and HazardMuxB) in the execute stage, enabling operand forwarding to avoid incorrect computation due to RAW (Read After Write) hazards. The hazard unit detects when forwarding is needed by comparing source and destination registers across pipeline stages and checking the write-enable signal. It selects the correct forwarded data from either the MEM or WB stage when needed. If no hazard is detected, values pass through normally. The load-use hazard is separately detected when a load instruction is followed by a dependent instruction; in this case, the pipeline stalls the PC and decode stage and flushes the execute stage. For control hazards, we implemented a static branch-not-taken predictor. However, the predictor initially failed due to incorrect PC selection logic being placed in the decode stage instead of the execute stage where the branch condition is actually resolved. After correcting this, we added logic to compute actual_pc_selE in the execute stage based on whether the instruction is a branch, JAL, or JALR and if the branch was taken. Flush logic ensures misfetched instructions are removed from the pipeline and replaced with the correct ones. We verified our implementation with waveform analysis, which confirmed that: Forwarding paths correctly deliver the necessary data in the EX stage, Load-use hazards insert the correct number of stalls, Control mispredictions trigger appropriate flushes and PC redirection. Lastly, we compared the performance of our pipelined design to our earlier multi-cycle implementation. The pipelined CPU completed a 50x50 matrix multiplication benchmark over one million times faster and consumed a total of 93 mW on-chip power, while maintaining similar resource utilization.',
     details: {
       carouselImages: [ 
         {
@@ -187,7 +187,7 @@ const projects: ProjectEntry[] = [
           caption: 'Load-Use Hazard with Stall: This waveform displays the pipeline stalling correctly when a load instruction is followed by an instruction using its result. The StallF and StallD signals are high, and FlushE is triggered to prevent incorrect execution in the EX stage.', 
         },
         {
-          imageUrl: '/img/333Hazards.png',
+          imageUrl: '/img/333Hazards3.png',
           caption: 'Control Hazard with Branch Taken: This waveform demonstrates flushing after a mispredicted branch. The branch_takenE signal goes high in the EX stage, which activates FlushD and FlushE to clear the instructions fetched under the false branch-not-taken assumption. The PC is then updated to the correct branch target.', 
         },
       ],
@@ -200,6 +200,38 @@ const projects: ProjectEntry[] = [
       ],
     },
   },
+
+  {
+    image: '/img/333cachecover.png',
+    title: ' Direct-Mapped L1 Instruction Cache for Pipelined OTTER MCU',
+    description:
+      'This project was implemented in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly, and is a direct-mapped Level-1 (L1) instruction cache, designed to improve the efficiency of instruction fetching in our pipelined OTTER RISC-V CPU. The cache consists of 16 blocks, each holding 8 instructions (words), and operates using simple hit/miss logic based on a tag and valid bit array. We started with the provided template and modified the cache module to properly track and compare tags. We added the critical line tags[index] <= pc_tag; to correctly update the caches tag array during block replacements—ensuring proper hit detection. When a hit occurs, the corresponding word is fetched from the cache; otherwise, on a miss, a NOP (0x13) is issued while the block is fetched from instruction memory. We also implemented a finite state machine (FSM) with two states: ST_READ_CACHE (normal operation) and ST_READ_MEM (cache miss handling). When a miss is detected, the FSM transitions to ST_READ_MEM, stalls the PC, and signals the cache to load a new block. Once loaded, the FSM returns to ST_READ_CACHE, and the pipeline resumes with the correct instruction. To integrate the cache with our existing pipelined OTTER MCU, we modified the instruction fetch and PC update logic. Specifically: We gated the IF/ID register and PC updates using both hazard stall signals (StallD, StallF) and the new Cache_stall signal to prevent premature instruction fetching during a miss. We ensured that the cache data and FSM outputs aligned with our existing pipeline stages, correctly substituting a NOP when stalling and resuming normal fetches post-update. Source code and design details can be found in the report.',
+
+    details: {
+      carouselImages: [ 
+        {
+          imageUrl: '/img/333cachecover.png',
+          caption: 'Cache Miss Handling and FSM Behavior: This waveform shows a cache miss occurring (miss signal = 1), causing the FSM to transition to ST_READ_MEM. During this time, pc_stall is high, and the pipeline fetch stage is stalled. A NOP instruction is issued while a new block is loaded.', 
+        },
+        {
+          imageUrl: '/img/333cache2.png',
+          caption: 'Validity and Tag Update Confirmation: Here we observe the cache loading a new block on a miss. The update signal goes high, valid_bits[index] is set, and tags[index] is updated to match the PCs tag. On the next access, a hit occurs, showing the cache is functioning correctly.', 
+        },
+        {
+          imageUrl: '/img/333cache3.png',
+          caption: ' Normal Hit and Cache Read: In this case, the cache correctly identifies a hit (hit = 1, miss = 0). The pipeline fetches the instruction directly from the cache without stalling, and the FSM remains in ST_READ_CACHE. This confirms the fast-path read logic and cache responsiveness.', 
+        },
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'RISC-V Pipelined OTTER with Hazards Source Code + Implementation Report',
+          url: '/docs/333hazardspdf.pdf',
+        }
+      ],
+    },
+  },
+
 
   {
     image: '/img/329a5cover.png',
@@ -385,7 +417,7 @@ const projects: ProjectEntry[] = [
     image: '/img/cpe333lab1cover.png',
     title: 'Matrix Multiplication in RISC-V Assembly Project',
     description:
-      'For this project, we implemented a matrix-matrix multiplication algorithm entirely in RISC-V assembly language. The primary goal was to deepen our understanding of low-level programming, stack operations, and the RISC-V calling convention while applying a fundamental linear algebra operation used widely in engineering and computer science. We wrote an assembly routine to multiply two square matrices (e.g., 3x3 up to 50x50), following the standard algorithm: multiplying each row of matrix A with each column of matrix B and summing the products to compute the resulting matrix C. This was done using nested loops and careful management of memory through the stack.After implementing the algorithm, we verified the output by comparing our results to those generated by an online matrix calculator, ensuring correctness with automated diff checks. This project reinforced key concepts in assembly programming and algorithm implementation and provided hands-on experience with mathematical computation at the instruction level.',
+      'This project was implemented in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly, and is a matrix-matrix multiplication algorithm entirely in RISC-V assembly language. The primary goal was to deepen our understanding of low-level programming, stack operations, and the RISC-V calling convention while applying a fundamental linear algebra operation used widely in engineering and computer science. We wrote an assembly routine to multiply two square matrices (e.g., 3x3 up to 50x50), following the standard algorithm: multiplying each row of matrix A with each column of matrix B and summing the products to compute the resulting matrix C. This was done using nested loops and careful management of memory through the stack.After implementing the algorithm, we verified the output by comparing our results to those generated by an online matrix calculator, ensuring correctness with automated diff checks. This project reinforced key concepts in assembly programming and algorithm implementation and provided hands-on experience with mathematical computation at the instruction level.',
     details: {
       
       assets: [
