@@ -170,6 +170,37 @@ const projects: ProjectEntry[] = [
       ytVideoId: 'AYW05r9xL4c',
     },
   },
+
+    {
+    image: '/img/333FEDE2.png',
+    title: ' Pipelined RISC-V CPU - Data Forwarding, Hazard Detection, and Control Handling',
+    description:
+      'This project implements a 5-stage pipelined OTTER RISC-V CPU with dynamic hazard handling, including full support for data forwarding, stall logic for load-use hazards, and flushing on control mispredictions. We began by implementing two hazard multiplexers (HazardMuxA and HazardMuxB) in the execute stage, enabling operand forwarding to avoid incorrect computation due to RAW (Read After Write) hazards. The hazard unit detects when forwarding is needed by comparing source and destination registers across pipeline stages and checking the write-enable signal. It selects the correct forwarded data from either the MEM or WB stage when needed. If no hazard is detected, values pass through normally. The load-use hazard is separately detected when a load instruction is followed by a dependent instruction; in this case, the pipeline stalls the PC and decode stage and flushes the execute stage. For control hazards, we implemented a static branch-not-taken predictor. However, the predictor initially failed due to incorrect PC selection logic being placed in the decode stage instead of the execute stage where the branch condition is actually resolved. After correcting this, we added logic to compute actual_pc_selE in the execute stage based on whether the instruction is a branch, JAL, or JALR and if the branch was taken. Flush logic ensures misfetched instructions are removed from the pipeline and replaced with the correct ones. We verified our implementation with waveform analysis, which confirmed that: Forwarding paths correctly deliver the necessary data in the EX stage, Load-use hazards insert the correct number of stalls, Control mispredictions trigger appropriate flushes and PC redirection. Lastly, we compared the performance of our pipelined design to our earlier multi-cycle implementation. The pipelined CPU completed a 50x50 matrix multiplication benchmark over one million times faster and consumed a total of 93 mW on-chip power, while maintaining similar resource utilization.',
+    details: {
+      carouselImages: [ 
+        {
+          imageUrl: '/img/333FDDE.png',
+          caption: 'Execute-to-Execute Forwarding: This waveform shows forwarding from the EX/MEM stage to the ALU inputs in the EX stage. The ForwardMuxA and ForwardMuxB signals are active (10), selecting the ALU result from the previous cycle. The ALU receives the correct values without stalling.', 
+        },
+        {
+          imageUrl: '/img/333FEDE2.png',
+          caption: 'Load-Use Hazard with Stall: This waveform displays the pipeline stalling correctly when a load instruction is followed by an instruction using its result. The StallF and StallD signals are high, and FlushE is triggered to prevent incorrect execution in the EX stage.', 
+        },
+        {
+          imageUrl: '/img/333Hazards.png',
+          caption: 'Control Hazard with Branch Taken: This waveform demonstrates flushing after a mispredicted branch. The branch_takenE signal goes high in the EX stage, which activates FlushD and FlushE to clear the instructions fetched under the false branch-not-taken assumption. The PC is then updated to the correct branch target.', 
+        },
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'RISC-V Pipelined OTTER with Hazards Source Code + Implementation Report',
+          url: '/docs/333hazardspdf.pdf',
+        }
+      ],
+    },
+  },
+
   {
     image: '/img/329a5cover.png',
     title: 'Digital-to-analog converter (DAC) using the SPI (STM32L4 MCU & MCP4821 DAC)',
@@ -360,7 +391,7 @@ const projects: ProjectEntry[] = [
       assets: [
         {
           icon: <PictureAsPdf />,
-          title: 'Matrix Multiplication Source Code + Proof',
+          title: 'Matrix Multiplication Important Source Code + Proof',
           url: '/docs/cpe333lab1pdf.pdf',
         },
       ],
