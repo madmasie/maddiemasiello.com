@@ -204,6 +204,35 @@ const projects: ProjectEntry[] = [
       ytVideoId: 'RLMiT1T3Tg0',
     },
   },
+
+   {
+    image: '/img/329a7cover.png',
+    title: 'UART Video Game - Treasure Hunt',
+    description:
+      'This project explored UART communication using the alternate functions of GPIO pins on an embedded system. The goal was to enable communication between a microcontroller and a terminal, such as one on a laptop. To demonstrate this functionality, I created a simple game where a player character can move around and collect treasures. The project includes a fully operational terminal interface and allows the user to go through both the initial stage in which characters are echoed back to the terminal, and the game stage. In the game stage, the borders all are functional allow the character to wrap around to the other side of the screen when crossing. More features include multicolor player character, treasure that turns the character red for 3 turns and solid borders. The player character was turned from a single character into characters resembling a stick figure. The treasure functions by activating when the center of the player character is over the treasure, then for the next three moves the character will be red. There are no known bugs in the design. An important lesson learned was how to use the UART interface and properly formatting in the terminal with escape codes as it is very common in embedded systems for debugging and communicating with computers. ',
+    details: {
+      carouselImages: [
+
+        
+        {
+          imageUrl: '/img/ee329a7pic.png',
+          caption: 'Splash Screen Introduction of Treasure Hunt Game', 
+        },
+       
+        
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'UART Project Report',
+          url: '/docs/ee329a7pdf.pdf',
+        }
+      ],
+
+      ytVideoId: 'hw2MHvnhOXY',
+    },
+  },
+
   
   {
     image: '/img/rgm-pic.png',
