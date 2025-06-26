@@ -9,8 +9,43 @@ const projects: ProjectEntry[] = [
    {
     image: '/img/329cpboard.jpg',
     title: 'DSP Guitar Delay Pedal - "Repeat-inator"',
-    description:
-      'The “Repeat-inator” is a custom-designed guitar effects pedal that applies a digital delay to an incoming audio signal. When a guitar is plugged into the input, the analog signal is converted into digital form by the STM32’s built-in ADC, stored temporarily using a circular buffer, and then played back after a delay period via an external DAC. This creates an echo-like repetition of the original sound. Users can adjust the delay time, the amount of feedback (how many times the sound repeats), and the dry/wet mix (balance between original and delayed signals) using potentiometers. These parameters are read in real-time and affect the behavior of the audio output dynamically. The system also features a true bypass button that lets users completely skip the delay effect, passing the guitar signal directly from input to output. The device is optimized for low latency and high-fidelity audio performance, tailored specifically for live or studio guitar use.',
+    description: (
+      <>
+        <div>
+          The "Repeat-inator" is a custom-designed guitar effects pedal that applies a digital delay to an incoming audio signal, creating echo-like repetitions of the original sound.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Signal Processing Chain</h3>
+          <ul>
+            <li>Analog guitar input signal conversion via STM32's built-in ADC</li>
+            <li>Digital signal storage using circular buffer</li>
+            <li>Delayed playback through external DAC</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>User Controls</h3>
+          <ul>
+            <li>Adjustable delay time via potentiometer</li>
+            <li>Feedback control (number of repetitions)</li>
+            <li>Dry/wet mix control (balance between original and delayed signals)</li>
+            <li>True bypass button for direct signal routing</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Key Features</h3>
+          <ul>
+            <li>Real-time parameter adjustment</li>
+            <li>Dynamic audio output behavior</li>
+            <li>Low latency optimization</li>
+            <li>High-fidelity audio performance</li>
+            <li>Suitable for both live and studio use</li>
+          </ul>
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
         {
@@ -42,8 +77,39 @@ const projects: ProjectEntry[] = [
   {
     image: '/img/329a1cover.png',
     title: 'Binary LED Counter and Instruction Timer using STM32L4A6ZG Nucleo Board',
-    description:
-      'This project implements a 4-bit binary LED counter and an instruction execution timing measurement system using the STM32L4A6ZG microcontroller. The LED counter counts from 0 to 15 with a visible delay, and the oscilloscope was used to calibrate and measure the delay loop. Execution timing was measured for a range of data types and arithmetic operations, and results are summarized. All Source code and data can be found in the project document ',
+    description: (
+      <>
+        <div>
+          This project implements a 4-bit binary LED counter and instruction execution timing measurement system using the STM32L4A6ZG microcontroller.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>LED Counter Implementation</h3>
+          <ul>
+            <li>4-bit binary counting from 0 to 15</li>
+            <li>Visible delay between count transitions</li>
+            <li>Oscilloscope-calibrated delay loop timing</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Instruction Timing Analysis</h3>
+          <ul>
+            <li>Execution timing measurements for:</li>
+            <ul>
+              <li>Various data types</li>
+              <li>Different arithmetic operations</li>
+            </ul>
+            <li>Comprehensive timing results documentation</li>
+            <li>Performance analysis and optimization</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          Complete source code and detailed timing data available in the project document.
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
         {
@@ -70,8 +136,42 @@ const projects: ProjectEntry[] = [
   {
     image: '/img/329a2cover.png',
     title: 'Keypad Interface - STM32L4A6ZG Nucleo Board',
-    description:
-      'This design project implemented a keypad interface using the STM32L4 microcontroller. A 3x4 matrix keypad was connected to GPIO pins, and software was developed to detect and identify keypresses through polling. The keypad module was designed to include proper configuration, keypress detection, and software debounce functionality. Upon detecting a valid keypress, a corresponding 4-bit binary value was displayed using four LEDs ',
+    description: (
+      <>
+        <div>
+          This design project implements a keypad interface system using the STM32L4 microcontroller, featuring GPIO-based input detection and LED output display.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Hardware Integration</h3>
+          <ul>
+            <li>3x4 matrix keypad connection to GPIO pins</li>
+            <li>Four-LED output display system</li>
+            <li>Efficient GPIO pin utilization</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Software Features</h3>
+          <ul>
+            <li>Polling-based keypress detection</li>
+            <li>Software debounce implementation</li>
+            <li>4-bit binary value conversion</li>
+            <li>Real-time LED display updates</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>System Design</h3>
+          <ul>
+            <li>Modular keypad interface architecture</li>
+            <li>Robust configuration system</li>
+            <li>Efficient keypress detection algorithm</li>
+            <li>Reliable input processing pipeline</li>
+          </ul>
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
         {
@@ -109,8 +209,47 @@ const projects: ProjectEntry[] = [
   {
     image: '/img/329a3cover.png',
     title: 'Digital Countdown Timer Game - STM32L4A6ZG Nucleo Board',
-    description:
-      'This project implements a digital countdown timer using an STM32 microcontroller, a keypad for time input, an LCD for display, and LEDs for visual feedback. Users input the countdown time in MM:SS format using the keypad, with digits entered from right to left. Once the timer starts, the LED flashes once per second during the countdown, and performs a "dance" sequence when the timer reaches zero. The system features multiple functional states, including a greeting screen, time input mode, active countdown, and completion state. Although the behavior of the star/reset button can vary depending on how quickly it is pressed, the system performs reliably. Additional attention was given to minimizing delay functions to improve response time, and throughout development, the importance of precise timing - especially when working with the LCD - was a key takeaway. Design details can be found in "Countdown Timer Project Report" above.',
+    description: (
+      <>
+        <div>
+          This project implements a digital countdown timer using an STM32 microcontroller, featuring user input through a keypad, visual output via LCD display, and LED feedback.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Key Features</h3>
+          <ul>
+            <li>Time input in MM:SS format using keypad (right to left entry)</li>
+            <li>Real-time LED feedback with once-per-second flash during countdown</li>
+            <li>Special LED "dance" sequence at timer completion</li>
+            <li>Comprehensive LCD display interface</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>System States</h3>
+          <ul>
+            <li>Greeting screen on startup</li>
+            <li>Time input mode for setting countdown</li>
+            <li>Active countdown state with visual feedback</li>
+            <li>Completion state with animation</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Technical Highlights</h3>
+          <ul>
+            <li>Optimized delay functions for improved response time</li>
+            <li>Precise timing implementation, especially for LCD operations</li>
+            <li>Reliable star/reset button functionality with variable press timing</li>
+            <li>Robust state management system</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          For complete implementation details and technical specifications, please refer to the "Countdown Timer Project Report" above.
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
 
@@ -139,8 +278,48 @@ const projects: ProjectEntry[] = [
   {
     image: '/img/329a4.png',
     title: 'Digital Reaction Timer Game - STM32L4A6ZG Nucleo Board',
-    description:
-      'This project features a reaction timer game built on the STM32L4 microcontroller. The system uses a 16x2 LCD and onboard button/LED to measure user reaction time with 1ms accuracy. After the user initiates the game, a randomized delay triggers an LED signal, prompting the user to respond as quickly as possible. The LCD displays the reaction time, and the system automatically resets for the next round. The project features an interrupt-driven state machine, hardware RNG, and clean modular design for responsive and accurate timing. Project source code and design details can be found in the "Countdown Timer Project Report" above.',
+    description: (
+      <>
+        <div>
+          This project features a high-precision reaction timer game built on the STM32L4 microcontroller, measuring user responses with millisecond accuracy.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Hardware Setup</h3>
+          <ul>
+            <li>16x2 LCD display interface</li>
+            <li>Onboard button for user input</li>
+            <li>LED for visual signaling</li>
+            <li>Hardware RNG module utilization</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Game Implementation</h3>
+          <ul>
+            <li>1ms precision timing system</li>
+            <li>Randomized delay generation</li>
+            <li>Real-time reaction measurement</li>
+            <li>Automatic round reset functionality</li>
+            <li>LCD-based result display</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Technical Architecture</h3>
+          <ul>
+            <li>Interrupt-driven state machine design</li>
+            <li>Clean modular code structure</li>
+            <li>Responsive timing implementation</li>
+            <li>Efficient game loop management</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          Complete source code and implementation details available in the "Countdown Timer Project Report" above.
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
 
@@ -174,8 +353,63 @@ const projects: ProjectEntry[] = [
     {
     image: '/img/pipeline.png',
     title: ' Pipelined RISC-V CPU - Data Forwarding, Hazard Detection, and Control Handling',
-    description:
-      'This project was implemented in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly, and is a 5-stage pipelined OTTER RISC-V CPU with dynamic hazard handling, including full support for data forwarding, stall logic for load-use hazards, and flushing on control mispredictions.Our group began by implementing two hazard multiplexers (HazardMuxA and HazardMuxB) in the execute stage, enabling operand forwarding to avoid incorrect computation due to RAW (Read After Write) hazards. The hazard unit detects when forwarding is needed by comparing source and destination registers across pipeline stages and checking the write-enable signal. It selects the correct forwarded data from either the MEM or WB stage when needed. If no hazard is detected, values pass through normally. The load-use hazard is separately detected when a load instruction is followed by a dependent instruction; in this case, the pipeline stalls the PC and decode stage and flushes the execute stage. For control hazards, we implemented a static branch-not-taken predictor. However, the predictor initially failed due to incorrect PC selection logic being placed in the decode stage instead of the execute stage where the branch condition is actually resolved. After correcting this, we added logic to compute actual_pc_selE in the execute stage based on whether the instruction is a branch, JAL, or JALR and if the branch was taken. Flush logic ensures misfetched instructions are removed from the pipeline and replaced with the correct ones. We verified our implementation with waveform analysis, which confirmed that: Forwarding paths correctly deliver the necessary data in the EX stage, Load-use hazards insert the correct number of stalls, Control mispredictions trigger appropriate flushes and PC redirection. Lastly, we compared the performance of our pipelined design to our earlier multi-cycle implementation. The pipelined CPU completed a 50x50 matrix multiplication benchmark over one million times faster and consumed a total of 93 mW on-chip power, while maintaining similar resource utilization.',
+    description: (
+      <>
+        <div>
+          This project was implemented in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly, and is a 5-stage pipelined OTTER RISC-V CPU with dynamic hazard handling, including full support for data forwarding, stall logic for load-use hazards, and flushing on control mispredictions.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Implementation Details</h3>
+          <ol>
+            <li>
+              <strong>Hazard Detection and Forwarding:</strong>
+              <ul>
+                <li>Implemented two hazard multiplexers (HazardMuxA and HazardMuxB) in the execute stage</li>
+                <li>Enabled operand forwarding to avoid incorrect computation due to RAW hazards</li>
+                <li>Hazard unit compares source and destination registers across pipeline stages</li>
+                <li>Selects forwarded data from either MEM or WB stage when needed</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Load-Use Hazard Handling:</strong>
+              <ul>
+                <li>Detects when a load instruction is followed by a dependent instruction</li>
+                <li>Stalls the PC and decode stage</li>
+                <li>Flushes the execute stage to prevent incorrect execution</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Control Hazard Management:</strong>
+              <ul>
+                <li>Implemented static branch-not-taken predictor</li>
+                <li>Corrected PC selection logic placement to execute stage</li>
+                <li>Added actual_pc_selE computation based on instruction type (branch, JAL, JALR)</li>
+                <li>Implemented flush logic to remove misfetched instructions</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Verification and Performance</h3>
+          <ul>
+            <li>Waveform analysis confirmed:</li>
+            <ul>
+              <li>Correct forwarding paths in EX stage</li>
+              <li>Proper stall insertion for load-use hazards</li>
+              <li>Appropriate flushes and PC redirection for control mispredictions</li>
+            </ul>
+            <li>Performance comparison with multi-cycle implementation:</li>
+            <ul>
+              <li>Over 1 million times faster on 50x50 matrix multiplication benchmark</li>
+              <li>93 mW total on-chip power consumption</li>
+              <li>Maintained similar resource utilization</li>
+            </ul>
+          </ul>
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [ 
         {
@@ -204,8 +438,69 @@ const projects: ProjectEntry[] = [
   {
     image: '/img/333cachecover.png',
     title: ' Direct-Mapped L1 Instruction Cache for Pipelined OTTER MCU',
-    description:
-      'This project was implemented in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly, and is a direct-mapped Level-1 (L1) instruction cache, designed to improve the efficiency of instruction fetching in our pipelined OTTER RISC-V CPU. The cache consists of 16 blocks, each holding 8 instructions (words), and operates using simple hit/miss logic based on a tag and valid bit array. We started with the provided template and modified the cache module to properly track and compare tags. We added the critical line tags[index] <= pc_tag; to correctly update the caches tag array during block replacements—ensuring proper hit detection. When a hit occurs, the corresponding word is fetched from the cache; otherwise, on a miss, a NOP (0x13) is issued while the block is fetched from instruction memory. We also implemented a finite state machine (FSM) with two states: ST_READ_CACHE (normal operation) and ST_READ_MEM (cache miss handling). When a miss is detected, the FSM transitions to ST_READ_MEM, stalls the PC, and signals the cache to load a new block. Once loaded, the FSM returns to ST_READ_CACHE, and the pipeline resumes with the correct instruction. To integrate the cache with our existing pipelined OTTER MCU, we modified the instruction fetch and PC update logic. Specifically: We gated the IF/ID register and PC updates using both hazard stall signals (StallD, StallF) and the new Cache_stall signal to prevent premature instruction fetching during a miss. We ensured that the cache data and FSM outputs aligned with our existing pipeline stages, correctly substituting a NOP when stalling and resuming normal fetches post-update. Source code and design details can be found in the report.',
+    description: (
+      <>
+        <div>
+          This project implements a direct-mapped Level-1 (L1) instruction cache for our pipelined OTTER RISC-V CPU, developed in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly.
+        </div>
+        
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Key Specifications</h3>
+          <ul>
+            <li>Cache Organization: 16 blocks × 8 instructions per block (32-bit words)</li>
+            <li>Block Size: 32 bytes total</li>
+            <li>Addressing: Direct-mapped with tag + valid bit arrays</li>
+            <li>Miss Penalty: One cycle NOP (0x13) + memory fetch time</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Implementation Details</h3>
+          <ol>
+            <li>
+              <strong>Cache Module:</strong>
+              <ul>
+                <li>Tag tracking and comparison logic</li>
+                <li>Critical tag update: tags[index] ⟸ pc_tag for block replacements</li>
+                <li>Hit/miss detection with valid bit verification</li>
+                <li>Word selection within cache blocks</li>
+              </ul>
+            </li>
+            <li>
+              <strong>State Machine (FSM):</strong>
+              <ul>
+                <li>ST_READ_CACHE: Normal operation with hit handling</li>
+                <li>ST_READ_MEM: Miss handling with PC stall</li>
+                <li>Automatic state transitions on block fetch completion</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Pipeline Integration:</strong>
+              <ul>
+                <li>Modified IF/ID register and PC update logic</li>
+                <li>Combined hazard handling (StallD, StallF) with Cache_stall</li>
+                <li>NOP insertion during misses</li>
+                <li>Cache-pipeline synchronization</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Error Handling</h3>
+          <ul>
+            <li>Cache miss → Immediate pipeline stall</li>
+            <li>Invalid cache state → Automatic flush</li>
+            <li>Memory fetch failure → Recovery mechanism</li>
+            <li>Cache coherency maintenance</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          Performance features and detailed implementation are documented in the project report.
+        </div>
+      </>
+    ),
 
     details: {
       carouselImages: [ 
@@ -236,8 +531,45 @@ const projects: ProjectEntry[] = [
   {
     image: '/img/329a5cover.png',
     title: 'Digital-to-analog converter (DAC) using the SPI (STM32L4 MCU & MCP4821 DAC)',
-    description:
-      'This project demonstrates the integration of an STM32L4 microcontroller with an MCP4821 digital-to-analog converter (DAC) using the SPI communication protocol. A 4x3 matrix keypad is used as user input to enter a 3-digit voltage value, which is then converted into a 12-bit DAC word and transmitted to the MCP4821. The system enables real-time voltage output from 0.00 V to 3.30 V, with input validation, output capping, and reset functionality. The implementation was verified using a logic analyzer and calibrated to meet specified accuracy requirements.',
+    description: (
+      <>
+        <div>
+          This project demonstrates the integration of an STM32L4 microcontroller with an MCP4821 digital-to-analog converter using SPI communication protocol.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Hardware Integration</h3>
+          <ul>
+            <li>STM32L4 microcontroller as main controller</li>
+            <li>MCP4821 DAC for analog output</li>
+            <li>4x3 matrix keypad for user input</li>
+            <li>SPI communication interface</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Functionality</h3>
+          <ul>
+            <li>Real-time voltage output (0.00V to 3.30V)</li>
+            <li>3-digit voltage value input</li>
+            <li>12-bit DAC word conversion</li>
+            <li>Input validation system</li>
+            <li>Output voltage capping</li>
+            <li>Reset functionality</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Verification</h3>
+          <ul>
+            <li>Logic analyzer testing</li>
+            <li>Calibration for accuracy</li>
+            <li>Comprehensive timing analysis</li>
+            <li>Performance requirements validation</li>
+          </ul>
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
 
@@ -271,8 +603,54 @@ const projects: ProjectEntry[] = [
    {
     image: '/img/329a7cover.png',
     title: 'UART Video Game - Treasure Hunt',
-    description:
-      'This project explored UART communication using the alternate functions of GPIO pins on an embedded system. The goal was to enable communication between a microcontroller and a terminal, such as one on a laptop. To demonstrate this functionality, I created a simple game where a player character can move around and collect treasures. The project includes a fully operational terminal interface and allows the user to go through both the initial stage in which characters are echoed back to the terminal, and the game stage. In the game stage, the borders all are functional allow the character to wrap around to the other side of the screen when crossing. More features include multicolor player character, treasure that turns the character red for 3 turns and solid borders. The player character was turned from a single character into characters resembling a stick figure. The treasure functions by activating when the center of the player character is over the treasure, then for the next three moves the character will be red. There are no known bugs in the design. An important lesson learned was how to use the UART interface and properly formatting in the terminal with escape codes as it is very common in embedded systems for debugging and communicating with computers. ',
+    description: (
+      <>
+        <div>
+          This project explores UART communication implementation using GPIO pins on an embedded system, creating a terminal-based game interface between a microcontroller and computer.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>UART communication via GPIO alternate functions</li>
+            <li>Terminal interface with character echo capability</li>
+            <li>Terminal escape code formatting</li>
+            <li>Two-stage development process:
+              <ul>
+                <li>Initial character echo testing phase</li>
+                <li>Full game implementation stage</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Game Features</h3>
+          <ul>
+            <li>Interactive player movement controls</li>
+            <li>Stick figure character design</li>
+            <li>Screen-wrapping border mechanics</li>
+            <li>Color-changing mechanics:
+              <ul>
+                <li>Multi-color player character</li>
+                <li>Character turns red for 3 moves after collecting treasure</li>
+              </ul>
+            </li>
+            <li>Solid border implementation</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Development Highlights</h3>
+          <ul>
+            <li>Bug-free implementation</li>
+            <li>Practical experience with UART interface</li>
+            <li>Terminal formatting with escape codes</li>
+            <li>Real-world embedded systems communication</li>
+          </ul>
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
 
@@ -300,8 +678,43 @@ const projects: ProjectEntry[] = [
   {
     image: '/img/rgm-pic.png',
     title: 'Circuits Lab Rube Goldberg Machine',
-    description:
-      'This project was created during my Circuits II lab at Cal Poly. Each week, we designed and implemented a different segment of the circuit, building the project step by step. Each segment represents a different part of the circuit, as shown in the block diagram. We showcased our final design at the end of the quarter. Encouraged to be inventive, we designed a Rube Goldberg-style machine, triggered by a user entering a "passcode" by playing a combination of pitches on a capacitive touch piano. The sequence ends with an LCD display, serving as a creative alarm system.',
+    description: (
+      <>
+        <div>
+          This project, developed during Circuits II lab at Cal Poly, implements an innovative Rube Goldberg-style machine combining multiple circuit segments into an interactive alarm system.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Development Process</h3>
+          <ul>
+            <li>Week-by-week circuit segment implementation</li>
+            <li>Iterative design and testing</li>
+            <li>Component integration strategy</li>
+            <li>Final showcase demonstration</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>System Features</h3>
+          <ul>
+            <li>Capacitive touch piano input</li>
+            <li>Musical passcode system</li>
+            <li>Multi-stage activation sequence</li>
+            <li>LCD display output</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Technical Implementation</h3>
+          <ul>
+            <li>Circuit segment modularity</li>
+            <li>Sequential trigger system</li>
+            <li>Interactive user interface</li>
+            <li>Creative alarm functionality</li>
+          </ul>
+        </div>
+      </>
+    ),
     details: {
       carouselImages: [
         {
@@ -334,11 +747,38 @@ const projects: ProjectEntry[] = [
     title: 'Digital Logic Interfacing Project',
     description: (
       <>
-      This project was created in EE 307 / EE 347 Lab (Semiconductor Device Electronics) at Cal Poly.
-      My group and I designed a custom interface for our designed circuits. Throughout the quarter, 
-      we analyzed, designed, and constructed digital logic gates, focusing on Positive Emitter-Coupled 
-      Logic (PECL), Transistor-Transistor Logic (TTL), and Complementary Metal-Oxide-Semiconductor (CMOS) technologies.
-      The project involved building a PECL OR-NOR gate, interfacing TTL to PECL, and further integrating the PECL with the CMOS. 
+        <div>
+          This project, developed in EE 307/EE 347 Lab (Semiconductor Device Electronics) at Cal Poly, focuses on designing and implementing custom interfaces between different digital logic technologies.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Technologies Explored</h3>
+          <ul>
+            <li>Positive Emitter-Coupled Logic (PECL)</li>
+            <li>Transistor-Transistor Logic (TTL)</li>
+            <li>Complementary Metal-Oxide-Semiconductor (CMOS)</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Implementation Details</h3>
+          <ul>
+            <li>Custom PECL OR-NOR gate construction</li>
+            <li>TTL to PECL interface design</li>
+            <li>PECL to CMOS integration</li>
+            <li>Circuit analysis and optimization</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Project Outcomes</h3>
+          <ul>
+            <li>Successful multi-technology integration</li>
+            <li>Practical digital logic implementation</li>
+            <li>Custom interface validation</li>
+            <li>Comprehensive circuit documentation</li>
+          </ul>
+        </div>
       </>
     ),
 
