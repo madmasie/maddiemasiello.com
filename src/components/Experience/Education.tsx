@@ -24,10 +24,10 @@ const entries: ExperienceEntry[] = [
       'Digital Design and Assembly Programming (CSC 133/233)',
       'Data Structures (CSC 202)',
       'Object Oriented Programming (CSC 203',
-      'Semiconductor Device Electronics',
+      'Semiconductor Device Electronics (EE 306)',
       'Microprocessor System Design (EE 329)',
       'Electronic Design & Lab (EE 409/449)',
-      'Analog Electronics & Integrated Circuits & Lab (EE 307/307/308)',
+      'Analog Electronics & Integrated Circuits & Lab (EE 307/308)',
       
       
       
