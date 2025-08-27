@@ -19,8 +19,7 @@ export default function AboutMe() {
       </Typography>
 
       <Typography paragraph>
-        I’m excited to apply my skills to advanced engineering projects as I
-        prepare to graduate in June 2026.
+        I’m excited to apply my skills to advanced engineering projects in industry as I prepare to graduate in June 2026.
       </Typography>
 
       <Typography paragraph>
