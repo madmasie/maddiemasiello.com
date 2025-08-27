@@ -15,11 +15,7 @@ export default function AboutMe() {
       </Typography>
 
       <Typography paragraph>
-        Through my coursework and personal projects, I’ve gained hands-on
-        experience in PCB design, circuit analysis, and hardware debugging.
-        I specialize in Altium, circuit design, and system integration, with a
-        strong foundation in circuit theory, power systems, and
-        microcontroller programming.
+        Through my coursework and personal projects (see below for more!), I’ve gained hands-on industry experience in PCB design, circuit analysis, and hardware debugging where I specialized in Altium, PCB/circuit design, and system integration. I have a strong foundation in the electrical engineering fundamentals, and am looking forward to doing more control systems work in the future.
       </Typography>
 
       <Typography paragraph>
