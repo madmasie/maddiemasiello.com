@@ -6,6 +6,71 @@ import { PictureAsPdf } from '@mui/icons-material';
 
 const projects: ProjectEntry[] = [
 
+
+
+{
+  image: '/img/inprogress.png',
+  title: 'CURRENT PROJECT IN PROCESS - Chess Playing SCARA Robot Arm',
+  description: (
+    <>
+      <div>
+        A 3D-printed SCARA robotic arm that plays chess using computer vision,
+        inverse kinematics, and the Stockfish engine. I built this in Summer 2025 alongside Ryan Neimi.
+      </div>
+
+      <div style={{ marginTop: '1rem' }}>
+        <h3>Design & Hardware</h3>
+        <ul>
+          <li>SCARA arm (custom 3D-printed parts for longer reach + mini-gripper)</li>
+          <li>Arduino Mega 2560 + RAMPS 1.4, A4988 stepper drivers, NEMA-17 motors</li>
+          <li>SG90 micro-servo for gripper actuation</li>
+          <li>Raspberry Pi 3 Model B and overhead webcam for vision</li>
+          <li>USB lighting/speaker for consistent illumination and feedback</li>
+          <li>Stockfish Chess Engine for next-best-move algorithms</li>
+        </ul>
+      </div>
+
+      <div style={{ marginTop: '1rem' }}>
+        <h3>Software & Vision</h3>
+        <ul>
+          <li>Python on Pi/PC: camera capture, board state, move validation, Stockfish</li>
+          <li>Arduino firmware: inverse kinematics + coordinated stepper control</li>
+          <li>No embedded board sensors required - pure overhead camera detection</li>
+          <li>Supports castling &amp; en passant; prompts user for pawn promotions</li>
+        </ul>
+      </div>
+
+      <div style={{ marginTop: '1rem' }}>
+        <h3>Detection Logic</h3>
+        <ul>
+          <li>Square occupancy via RGB pixel variance across board cells</li>
+          <li>Piece color classified by average pixel brightness thresholds</li>
+          <li>Invalid moves trigger user alerts and re-scan</li>
+        </ul>
+      </div>
+
+      <div style={{ marginTop: '1rem' }}>
+        <h3>Practical Notes</h3>
+        <ul>
+          <li>High-contrast board/pieces and even, shadow-free lighting</li>
+          <li>Camera calibration (distortion/fisheye) and stable mount</li>
+          <li>Manual arm alignment at startup for reference zero</li>
+        </ul>
+      </div>
+    </>
+  ),
+  details: {
+    carouselImages: [
+      { imageUrl: '/img/inprogress.png', caption: 'SCARA robot arm in progress' },
+    ],
+    
+  },
+},
+
+
+
+
+
    {
     image: '/img/329cpboard.jpg',
     title: 'DSP Guitar Delay Pedal - "Repeat-inator"',
@@ -241,12 +306,11 @@ const projects: ProjectEntry[] = [
             <li>Optimized delay functions for improved response time</li>
             <li>Precise timing implementation, especially for LCD operations</li>
             <li>Reliable star/reset button functionality with variable press timing</li>
-            <li>Robust state management system</li>
           </ul>
         </div>
 
         <div style={{ marginTop: '1rem' }}>
-          For complete implementation details and technical specifications, please refer to the "Countdown Timer Project Report" above.
+          For complete implementation details and technical specifications, please refer to the "Countdown Timer Project Report".
         </div>
       </>
     ),
@@ -316,7 +380,7 @@ const projects: ProjectEntry[] = [
         </div>
 
         <div style={{ marginTop: '1rem' }}>
-          Complete source code and implementation details available in the "Countdown Timer Project Report" above.
+          Complete source code and implementation details available in the "Countdown Timer Project Report".
         </div>
       </>
     ),
@@ -349,6 +413,80 @@ const projects: ProjectEntry[] = [
       ytVideoId: 'AYW05r9xL4c',
     },
   },
+
+
+  {
+    image: '/img/329a5cover.png',
+    title: 'Digital-to-analog converter (DAC) using the SPI (STM32L4 MCU & MCP4821 DAC)',
+    description: (
+      <>
+        <div>
+          This project demonstrates the integration of an STM32L4 microcontroller with an MCP4821 digital-to-analog converter using SPI communication protocol.
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Hardware Integration</h3>
+          <ul>
+            <li>STM32L4 microcontroller as main controller</li>
+            <li>MCP4821 DAC for analog output</li>
+            <li>4x3 matrix keypad for user input</li>
+            <li>SPI communication interface</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Functionality</h3>
+          <ul>
+            <li>Real-time voltage output (0.00V to 3.30V)</li>
+            <li>3-digit voltage value input</li>
+            <li>12-bit DAC word conversion</li>
+            <li>Input validation system</li>
+            <li>Output voltage capping</li>
+            <li>Reset functionality</li>
+          </ul>
+        </div>
+
+        <div style={{ marginTop: '1rem' }}>
+          <h3>Verification</h3>
+          <ul>
+            <li>Logic analyzer testing</li>
+            <li>Calibration for accuracy</li>
+            <li>Comprehensive timing analysis</li>
+            <li>Performance requirements validation</li>
+          </ul>
+        </div>
+      </>
+    ),
+    details: {
+      carouselImages: [
+
+        
+        {
+          imageUrl: '/img/329a5wire.png',
+          caption: 'Reaction Timer Wiring Diagram', 
+        },
+        {
+          imageUrl: '/img/329a5cover.png',
+          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
+        },
+        {
+          imageUrl: '/img/329a5cover2.png',
+          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
+        }
+        
+      ],
+      assets: [
+        {
+          icon: <PictureAsPdf />,
+          title: 'DAC Project Report',
+          url: '/docs/329a5pdf.pdf',
+        }
+      ],
+
+      ytVideoId: 'RLMiT1T3Tg0',
+    },
+  },
+
 
     {
     image: '/img/pipeline.png',
@@ -528,77 +666,7 @@ const projects: ProjectEntry[] = [
   },
 
 
-  {
-    image: '/img/329a5cover.png',
-    title: 'Digital-to-analog converter (DAC) using the SPI (STM32L4 MCU & MCP4821 DAC)',
-    description: (
-      <>
-        <div>
-          This project demonstrates the integration of an STM32L4 microcontroller with an MCP4821 digital-to-analog converter using SPI communication protocol.
-        </div>
-
-        <div style={{ marginTop: '1rem' }}>
-          <h3>Hardware Integration</h3>
-          <ul>
-            <li>STM32L4 microcontroller as main controller</li>
-            <li>MCP4821 DAC for analog output</li>
-            <li>4x3 matrix keypad for user input</li>
-            <li>SPI communication interface</li>
-          </ul>
-        </div>
-
-        <div style={{ marginTop: '1rem' }}>
-          <h3>Functionality</h3>
-          <ul>
-            <li>Real-time voltage output (0.00V to 3.30V)</li>
-            <li>3-digit voltage value input</li>
-            <li>12-bit DAC word conversion</li>
-            <li>Input validation system</li>
-            <li>Output voltage capping</li>
-            <li>Reset functionality</li>
-          </ul>
-        </div>
-
-        <div style={{ marginTop: '1rem' }}>
-          <h3>Verification</h3>
-          <ul>
-            <li>Logic analyzer testing</li>
-            <li>Calibration for accuracy</li>
-            <li>Comprehensive timing analysis</li>
-            <li>Performance requirements validation</li>
-          </ul>
-        </div>
-      </>
-    ),
-    details: {
-      carouselImages: [
-
-        
-        {
-          imageUrl: '/img/329a5wire.png',
-          caption: 'Reaction Timer Wiring Diagram', 
-        },
-        {
-          imageUrl: '/img/329a5cover.png',
-          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
-        },
-        {
-          imageUrl: '/img/329a5cover2.png',
-          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
-        }
-        
-      ],
-      assets: [
-        {
-          icon: <PictureAsPdf />,
-          title: 'DAC Project Report',
-          url: '/docs/329a5pdf.pdf',
-        }
-      ],
-
-      ytVideoId: 'RLMiT1T3Tg0',
-    },
-  },
+  
 
    {
     image: '/img/329a7cover.png',
