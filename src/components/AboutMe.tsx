@@ -7,22 +7,31 @@ export default function AboutMe() {
         About Me
       </Typography>
       <Divider sx={{ mb: 2 }} />
-      <Typography>
-        Hello! My name is Maddie Masiello, and I am a 4th year electrical engineering 
-        student at Cal Poly SLO, originally from Littleton, Colorado.
 
-        I have extensive hands-on experience in PCB design,
-        circuit analysis, and hardware debugging, specializing in Altium,
-        circuit design, and system integration. Proven track record of designing
-        complex electrical systems, optimizing production processes, and
-        resolving critical hardware issues. Skilled in managing technical
-        projects, collaborating across teams, and delivering innovative
-        solutions for real-world challenges. Strong foundation in circuit
-        theory, power systems, and micro-controller programming, ready to
-        contribute effectively to advanced engineering projects.
+      <Typography paragraph>
+        Hey there! I'm Maddie, a final-year Electrical Engineering student at
+        Cal Poly SLO. I’m passionate about control systems, power, and embedded
+        systems.
+      </Typography>
 
-        Outside of my studies, I enjoy skiing, playing ice hockey, biking, and playing viola and piano.
+      <Typography paragraph>
+        Through my coursework and personal projects, I’ve gained hands-on
+        experience in PCB design, circuit analysis, and hardware debugging.
+        I specialize in Altium, circuit design, and system integration, with a
+        strong foundation in circuit theory, power systems, and
+        microcontroller programming.
+      </Typography>
+
+      <Typography paragraph>
+        I’m excited to apply my skills to advanced engineering projects as I
+        prepare to graduate in June 2026.
+      </Typography>
+
+      <Typography paragraph>
+        Outside of engineering, I enjoy skiing, ice hockey, biking, and playing
+        both viola and piano.
       </Typography>
     </Container>
   );
 }
+
