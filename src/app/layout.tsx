@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import { Inter } from 'next/font/google';
 
