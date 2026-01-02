@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run pages:build
+        run: npm run build
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -31,5 +31,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 153255d3475d0254baf21408b8a2bd7c
           projectName: maddiemasiello-com
-          directory: .vercel/output/static
+          directory: out
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
