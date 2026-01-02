@@ -63,7 +63,7 @@ const projects: ProjectEntry[] = [
     carouselImages: [
       { imageUrl: '/img/inprogress.png', caption: 'SCARA robot arm in progress' },
     ],
-    
+
   },
 },
 
@@ -77,13 +77,13 @@ const projects: ProjectEntry[] = [
     description: (
       <>
         <div>
-          The "Repeat-inator" is a custom-designed guitar effects pedal that applies a digital delay to an incoming audio signal, creating echo-like repetitions of the original sound.
+          The &quot;Repeat-inator&quot; is a custom-designed guitar effects pedal that applies a digital delay to an incoming audio signal, creating echo-like repetitions of the original sound.
         </div>
 
         <div style={{ marginTop: '1rem' }}>
           <h3>Signal Processing Chain</h3>
           <ul>
-            <li>Analog guitar input signal conversion via STM32's built-in ADC</li>
+            <li>Analog guitar input signal conversion via STM32&apos;s built-in ADC</li>
             <li>Digital signal storage using circular buffer</li>
             <li>Delayed playback through external DAC</li>
           </ul>
@@ -243,19 +243,19 @@ const projects: ProjectEntry[] = [
           imageUrl: '/img/ee329a2schem.png',
           caption: 'STM32L4A6ZG Nucleo Board & Keypad Wiring Diagram',
         },
-        
+
         {
           imageUrl: '/img/329a2main.png',
           caption:
             'Pseudo Code main operations for Keypad Interface',
         },
-        
+
         {
           imageUrl: '/img/329a2debounce.png',
           caption:
             'Pseudo Code Debouunce operations for Keypad Interface',
         },
-        
+
       ],
       assets: [
         {
@@ -264,7 +264,7 @@ const projects: ProjectEntry[] = [
           url: '/docs/ee329a1.pdf',
         }
 
-      
+
 
       ],
 
@@ -285,7 +285,7 @@ const projects: ProjectEntry[] = [
           <ul>
             <li>Time input in MM:SS format using keypad (right to left entry)</li>
             <li>Real-time LED feedback with once-per-second flash during countdown</li>
-            <li>Special LED "dance" sequence at timer completion</li>
+            <li>Special LED &quot;dance&quot; sequence at timer completion</li>
             <li>Comprehensive LCD display interface</li>
           </ul>
         </div>
@@ -310,7 +310,7 @@ const projects: ProjectEntry[] = [
         </div>
 
         <div style={{ marginTop: '1rem' }}>
-          For complete implementation details and technical specifications, please refer to the "Countdown Timer Project Report".
+          For complete implementation details and technical specifications, please refer to the &quot;Countdown Timer Project Report&quot;.
         </div>
       </>
     ),
@@ -380,26 +380,26 @@ const projects: ProjectEntry[] = [
         </div>
 
         <div style={{ marginTop: '1rem' }}>
-          Complete source code and implementation details available in the "Countdown Timer Project Report".
+          Complete source code and implementation details available in the &quot;Countdown Timer Project Report&quot;.
         </div>
       </>
     ),
     details: {
       carouselImages: [
 
-        
+
         {
           imageUrl: '/img/329a4schem.png',
-          caption: 'Reaction Timer Wiring Diagram', 
+          caption: 'Reaction Timer Wiring Diagram',
         },
         {
           imageUrl: '/img/329a4timing.png',
-          caption: 'Theoretical 5kHz with 25% Duty Cycle Square Wave', 
+          caption: 'Theoretical 5kHz with 25% Duty Cycle Square Wave',
         },
-        
+
         {
           imageUrl: '/img/329a4clk.png',
-          caption: 'ISR Execution  timing with MC0 Clock. Oscilloscope capture of PC0 (5 kHz output waveform) and PC1 (ISR timing pulse). PC1 briefly pulses high during each TIM2 interrupt (CCR1 compare match and ARR overflow), indicating ISR execution timing relative to the 5 kHz signal. ', 
+          caption: 'ISR Execution  timing with MC0 Clock. Oscilloscope capture of PC0 (5 kHz output waveform) and PC1 (ISR timing pulse). PC1 briefly pulses high during each TIM2 interrupt (CCR1 compare match and ARR overflow), indicating ISR execution timing relative to the 5 kHz signal. ',
         },
       ],
       assets: [
@@ -460,20 +460,20 @@ const projects: ProjectEntry[] = [
     details: {
       carouselImages: [
 
-        
+
         {
           imageUrl: '/img/329a5wire.png',
-          caption: 'Reaction Timer Wiring Diagram', 
+          caption: 'Reaction Timer Wiring Diagram',
         },
         {
           imageUrl: '/img/329a5cover.png',
-          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
+          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.',
         },
         {
           imageUrl: '/img/329a5cover2.png',
-          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.', 
+          caption: 'Logic Analyzer Timing Diagram for 0.5 V (top) and 1.5 V (bottom) – D0 = Clock Select, D1 = Clock, D2 = Vout, D3 = SDI.',
         }
-        
+
       ],
       assets: [
         {
@@ -549,18 +549,18 @@ const projects: ProjectEntry[] = [
       </>
     ),
     details: {
-      carouselImages: [ 
+      carouselImages: [
         {
           imageUrl: '/img/333FDDE.png',
-          caption: 'Execute-to-Execute Forwarding: This waveform shows forwarding from the EX/MEM stage to the ALU inputs in the EX stage. The ForwardMuxA and ForwardMuxB signals are active (10), selecting the ALU result from the previous cycle. The ALU receives the correct values without stalling.', 
+          caption: 'Execute-to-Execute Forwarding: This waveform shows forwarding from the EX/MEM stage to the ALU inputs in the EX stage. The ForwardMuxA and ForwardMuxB signals are active (10), selecting the ALU result from the previous cycle. The ALU receives the correct values without stalling.',
         },
         {
           imageUrl: '/img/333FEDE2.png',
-          caption: 'Load-Use Hazard with Stall: This waveform displays the pipeline stalling correctly when a load instruction is followed by an instruction using its result. The StallF and StallD signals are high, and FlushE is triggered to prevent incorrect execution in the EX stage.', 
+          caption: 'Load-Use Hazard with Stall: This waveform displays the pipeline stalling correctly when a load instruction is followed by an instruction using its result. The StallF and StallD signals are high, and FlushE is triggered to prevent incorrect execution in the EX stage.',
         },
         {
           imageUrl: '/img/333Hazards3.png',
-          caption: 'Control Hazard with Branch Taken: This waveform demonstrates flushing after a mispredicted branch. The branch_takenE signal goes high in the EX stage, which activates FlushD and FlushE to clear the instructions fetched under the false branch-not-taken assumption. The PC is then updated to the correct branch target.', 
+          caption: 'Control Hazard with Branch Taken: This waveform demonstrates flushing after a mispredicted branch. The branch_takenE signal goes high in the EX stage, which activates FlushD and FlushE to clear the instructions fetched under the false branch-not-taken assumption. The PC is then updated to the correct branch target.',
         },
       ],
       assets: [
@@ -581,7 +581,7 @@ const projects: ProjectEntry[] = [
         <div>
           This project implements a direct-mapped Level-1 (L1) instruction cache for our pipelined OTTER RISC-V CPU, developed in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly.
         </div>
-        
+
         <div style={{ marginTop: '1rem' }}>
           <h3>Key Specifications</h3>
           <ul>
@@ -641,18 +641,18 @@ const projects: ProjectEntry[] = [
     ),
 
     details: {
-      carouselImages: [ 
+      carouselImages: [
         {
           imageUrl: '/img/333cachecover.png',
-          caption: 'Cache Miss Handling and FSM Behavior: This waveform shows a cache miss occurring (miss signal = 1), causing the FSM to transition to ST_READ_MEM. During this time, pc_stall is high, and the pipeline fetch stage is stalled. A NOP instruction is issued while a new block is loaded.', 
+          caption: 'Cache Miss Handling and FSM Behavior: This waveform shows a cache miss occurring (miss signal = 1), causing the FSM to transition to ST_READ_MEM. During this time, pc_stall is high, and the pipeline fetch stage is stalled. A NOP instruction is issued while a new block is loaded.',
         },
         {
           imageUrl: '/img/333cache2.png',
-          caption: 'Validity and Tag Update Confirmation: Here we observe the cache loading a new block on a miss. The update signal goes high, valid_bits[index] is set, and tags[index] is updated to match the PCs tag. On the next access, a hit occurs, showing the cache is functioning correctly.', 
+          caption: 'Validity and Tag Update Confirmation: Here we observe the cache loading a new block on a miss. The update signal goes high, valid_bits[index] is set, and tags[index] is updated to match the PCs tag. On the next access, a hit occurs, showing the cache is functioning correctly.',
         },
         {
           imageUrl: '/img/333cache3.png',
-          caption: ' Normal Hit and Cache Read: In this case, the cache correctly identifies a hit (hit = 1, miss = 0). The pipeline fetches the instruction directly from the cache without stalling, and the FSM remains in ST_READ_CACHE. This confirms the fast-path read logic and cache responsiveness.', 
+          caption: ' Normal Hit and Cache Read: In this case, the cache correctly identifies a hit (hit = 1, miss = 0). The pipeline fetches the instruction directly from the cache without stalling, and the FSM remains in ST_READ_CACHE. This confirms the fast-path read logic and cache responsiveness.',
         },
       ],
       assets: [
@@ -666,7 +666,7 @@ const projects: ProjectEntry[] = [
   },
 
 
-  
+
 
    {
     image: '/img/329a7cover.png',
@@ -722,13 +722,13 @@ const projects: ProjectEntry[] = [
     details: {
       carouselImages: [
 
-        
+
         {
           imageUrl: '/img/ee329a7pic.png',
-          caption: 'Splash Screen Introduction of Treasure Hunt Game', 
+          caption: 'Splash Screen Introduction of Treasure Hunt Game',
         },
-       
-        
+
+
       ],
       assets: [
         {
@@ -742,7 +742,7 @@ const projects: ProjectEntry[] = [
     },
   },
 
-  
+
   {
     image: '/img/rgm-pic.png',
     title: 'Circuits Lab Rube Goldberg Machine',
@@ -808,7 +808,7 @@ const projects: ProjectEntry[] = [
     },
   },
 
-  
+
 
   {
     image: '/img/ee307.png',
@@ -852,11 +852,11 @@ const projects: ProjectEntry[] = [
 
       details: {
         carouselImages: [
-          { 
+          {
             imageUrl: '/img/ee307schem.png',
             caption: 'Full interfacing circuit layout with custom interfacing schematic',
           },
-          { 
+          {
             imageUrl: '/img/ee307schematic.png',
             caption: 'Final digital logic interfacing project schematic with custom interfacing',
           },
@@ -917,7 +917,7 @@ const projects: ProjectEntry[] = [
           caption: 'Pendubot MATLAB Simulink Design',
         },
       ],
-      
+
     },
   },
 
@@ -927,7 +927,7 @@ const projects: ProjectEntry[] = [
     description:
       'This project was implemented in CPE 333 (Computer Hardware Architecture and Design) at Cal Poly, and is a matrix-matrix multiplication algorithm entirely in RISC-V assembly language. The primary goal was to deepen our understanding of low-level programming, stack operations, and the RISC-V calling convention while applying a fundamental linear algebra operation used widely in engineering and computer science. We wrote an assembly routine to multiply two square matrices (e.g., 3x3 up to 50x50), following the standard algorithm: multiplying each row of matrix A with each column of matrix B and summing the products to compute the resulting matrix C. This was done using nested loops and careful management of memory through the stack.After implementing the algorithm, we verified the output by comparing our results to those generated by an online matrix calculator, ensuring correctness with automated diff checks. This project reinforced key concepts in assembly programming and algorithm implementation and provided hands-on experience with mathematical computation at the instruction level.',
     details: {
-      
+
       assets: [
         {
           icon: <PictureAsPdf />,
@@ -935,7 +935,7 @@ const projects: ProjectEntry[] = [
           url: '/docs/cpe333lab1pdf.pdf',
         },
       ],
-      
+
     },
   },
 
